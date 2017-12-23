@@ -213,17 +213,17 @@ describe('POST /users', () => {
 
     it('should return validation errors if request invalid', done => {
         request(app)
-          .post('/users')
-          .send({ email: '12ed12d21d.com', password: '123' })
-          .expect(400)
-          .end(done)
+			.post('/users')
+			.send({ email: '12ed12d21d.com', password: '123' })
+			.expect(400)
+			.end(done)
     })
 
     it('should not create user if email is in use', done => {
-      request(app)
-        .post('/users')
-        .send({ email: 'miguel@example.com', password: 'userOnePass' })
-        .expect(400)
-        .end(done)
+    	request(app)
+			.post('/users')
+			.send({ email: 'miguel@example.com', password: 'userOnePass' })
+			.expect(400)
+			.end(done)
     })
 })
